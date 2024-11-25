@@ -2,9 +2,10 @@ import CardInsta from "../components/shared/cardInsta";
 import cake from "../assets/images/cake.webp";
 import bon from "../assets/images/bon.webp";
 import nutmeg from "../assets/images/nutmeg.webp";
-import brand from "../assets/images/brand.webp";
 import Register from "../components/shared/register";
 import Social from "../components/ui/social";
+import Sertificate from "../icons/sertificate";
+import Logo from "../components/ui/logo";
 
 
 const cardInstagram = [
@@ -31,35 +32,30 @@ const cardInstagram = [
 function SignUp() {
   return (
     <div className="w-full h-[100vh]  overflow-hidden relative bg-[url('../../assets/images/signUp.webp')] bg-cover bg-top ">
-      <div className="flex flex-col gap-3 absolute ml-[107px] bottom-[-350px]">
+      <div className="hidden flex-col gap-3 absolute bottom-[-350px] ml-[-107px] lg:ml-[57px] xl:ml-[107px]  md:flex">
         {cardInstagram.map((item, index) => (
           <div key={index}>
             <CardInsta data={item} />
           </div>
         ))}
       </div>
-      <div className="container flex flex-col items-end  pt-[46px]">
-        <div className="flex items-center gap-4">
-          <button className="w-[98px] h-[40px] rounded-lg  border-[1px] border-white font-Poppins font-normal text-sm text-[#fff] leading-[21px]">
+      <div className="container flex flex-col md:items-end  mt-[46px]">
+          <button className="hidden items-center justify-center w-[98px] h-[40px] rounded-lg  border-[1px] border-white font-Poppins font-normal text-sm text-[#fff] leading-[21px] md:flex">
             Войти
           </button>
-        </div>
+ 
 
-        <div className="flex items-center">
-              <div className="flex flex-col items-center pt-[46px]">
-                <div className="flex items-start pb-[37px]">
-                  <h1 className="font-Stray font-bold text-white text-[60px] leading-[72px]">
-                    keykomania
-                  </h1>
-                  <img src={brand} alt="brand image" className="w-5 h-5" />
-                </div>
-                <Register />
+        <div className="flex flex-col pt-[46px]">
                 
-              </div>
-              <div className="flex">
+                <Logo className="font-Stray font-bold text-white text-[60px] leading-[72px]" icon="fill-white size-5"/>
+
+              <div className="flex flex-col items-center xl:flex-row w-full">
+              <Register />
               <Social/>
             
-          </div>
+              </div>
+
+              <p className="flex items-center justify-center pt-[98px] font-Poppins font-medium text-[10px] text-white leading-[63px]"> <span className="pr-2"><Sertificate/></span>Все права защищены ООО “keykomania” 2024 </p>
         </div>
       </div>
     </div>
