@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-      --text-size: 13px;
-}
-
 *{
   margin: 0;
   padding: 0;
@@ -52,23 +48,24 @@
   font-family: "Roboto";
   src: url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
   font-weight: 500;
-  font-style: medium;
+  font-style:normal;
 }
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
   font-weight: 700;
-  font-style: bold;
+  font-style: normal;
 }
 @font-face {
   font-family: "FSP DEMO - Stray Bold";
   src: url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.eot");
-  src: url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.svg#FSP DEMO - Stray Bold")format("svg");
+  src: url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/31fbbe7c35351bef96bb897f1bfff479.svg#FSP DEMO - Stray Bold") format("svg");
 }
+
 
 .spin-hidden::-webkit-inner-spin-button,
 .spin-hidden::-webkit-outer-spin-button {
@@ -77,6 +74,11 @@
   margin: 0; 
 }
 
-.spin-hidden {
-  -moz-appearance: textfield; 
+.scrollbar-hide {
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
 }

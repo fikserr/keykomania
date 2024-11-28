@@ -2,7 +2,7 @@ import { PiTrademarkRegisteredBold } from "react-icons/pi";
 
 function Logo({className,icon}) {
   return (
-    <div className="flex justify-center items-start pb-[37px]">
+    <div className="flex justify-center items-start ">
                   <h1 className={className}>
                     keykomania
                   </h1>

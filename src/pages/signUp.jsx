@@ -6,6 +6,7 @@ import Register from "../components/shared/register";
 import Social from "../components/ui/social";
 import Sertificate from "../icons/sertificate";
 import Logo from "../components/ui/logo";
+import { NavLink } from "react-router-dom";
 
 
 const cardInstagram = [
@@ -40,16 +41,16 @@ function SignUp() {
         ))}
       </div>
       <div className="container flex flex-col md:items-end  mt-[46px]">
-          <button className="hidden items-center justify-center w-[98px] h-[40px] rounded-lg  border-[1px] border-white font-Poppins font-normal text-sm text-[#fff] leading-[21px] md:flex">
+          <NavLink to='/login' className="hidden items-center justify-center w-[98px] h-[40px] rounded-lg  border-[1px] border-white font-Poppins font-normal text-sm text-[#fff] leading-[21px] md:flex">
             Войти
-          </button>
+          </NavLink>
  
 
         <div className="flex flex-col pt-[46px]">
                 
-                <Logo className="font-Stray font-bold text-white text-[60px] leading-[72px]" icon="fill-white size-5"/>
+              <Logo className="font-Stray font-bold text-white text-[60px] leading-[72px]" icon="fill-white size-2 md:size-5"/>
 
-              <div className="flex flex-col items-center xl:flex-row w-full">
+              <div className="flex flex-col items-center xl:flex-row w-full pt-[21px] md:pt-[31px] lg:pt-[37px]">
               <Register />
               <Social/>
             

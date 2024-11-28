@@ -4,7 +4,7 @@ import { useState } from "react";
 import UpRight from "../../icons/upRight";
 import { NavLink } from "react-router-dom";
 
-function Register() {
+function SingIn() {
   const [eyeActive, setEyeActive] = useState(false);
 
   const {
@@ -14,35 +14,14 @@ function Register() {
   } = useForm();
 
   return (
-    <div className="h-[641px] w-full md:h-[513px] md:w-[613px] rounded-[7px] relative overflow-hidden z-0">
+    <div className="h-[469px] w-full md:h-[379px] md:w-[613px] rounded-[7px] relative overflow-hidden z-0">
       <div className="absolute top-0 h-full w-full blur-sm bg-[url('../../assets/images/signUp.webp')] brightness-50 bg-cover bg-center"></div>
       <div className="absolute h-full w-full top-0 z-10 pt-[27px] pb-[45px] px-[47px]">
         <h5 className="font-Poppins font-medium text-[25px] text-white leading-9">
-          Регистрация
+          Войти
         </h5>
         <form className="h-full w-full pt-[13px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[35px] gap-y-4 ">
-            <div className="flex flex-col  gap-[13px]">
-              <p className="font-Poppins font-normal text-[13px] text-white">
-                Имя
-              </p>
-              <input
-                type="text"
-                {...register("firstName")}
-                className="bg-transparent border-[1px] outline-none w-full h-[41px] rounded-[5px] text-white pl-1"
-              />
-            </div>
-            <div className="flex flex-col gap-[13px]">
-              <p className="font-Poppins font-normal text-[13px] text-white">
-                Фамилия
-              </p>
-              <input
-                type="text"
-                {...register("lastName")}
-                className="bg-transparent border-[1px] outline-none w-full h-[41px] rounded-[5px] text-white pl-1"
-              />
-              {errors.lastName && <p>Last name is required.</p>}
-            </div>
             <div className="flex flex-col gap-[13px] md:col-span-2">
               <p className="font-Poppins font-normal text-[13px] text-white">
                 Номер телефона
@@ -76,30 +55,13 @@ function Register() {
           </div>
 
           <div className="flex flex-col gap-y-[13px] pt-3">
-            <div className="flex gap-2 items-center">
-              <input type="radio" />
-              <p className="font-Poppins font-normal text-[10px] text-[#FFFFFF99]">
-                Используйте 8 или более символов
-              </p>
-            </div>
-
-            <div className="flex items-start gap-2 ">
-              <input
-                type="checkbox"
-                className="check w-[18px] h-[18px] accent-black"
-              />
-              <p className="font-Poppins font-normal text-[8px] leading-3 md:text-[13px] md:leading-5 text-white">
-                Создавая учетную запись, я соглашаюсь с нашими <br />
-                Условиями использования и Политикой конфиденциальности.
-              </p>
-            </div>
-            <div className="flex flex-col md:flex-row items-center w-full ">
+            <div className="flex flex-col md:flex-row items-center w-full pt-[21px] md:pt-[33px]">
               <button
                 type="submit"
                 onClick={handleSubmit((data) => console.log(data))}
                 className="font-Poppins font-normal text-xs text-[#060606] bg-white flex items-center justify-center w-full h-[43px] md:w-[156px] md:h-[32px] rounded-[5px]"
               >
-                Создать аккаунт
+                Войти
               </button>
 
               <div className="flex w-full items-center flex-col  md:hidden">
@@ -110,25 +72,22 @@ function Register() {
                   </span>
                   <div className="w-full border-t-[1px] border-white"></div>
                 </div>
-                <NavLink to='/login' className="flex items-center pt-5 font-Poppins font-normal text-sm leading-[21px] text-white">
-                  Войти в аккаунт
+                <NavLink to='/signUp' className="flex items-center pt-5 font-Poppins font-normal text-sm leading-[21px] text-white">
+                 Создать новый аккаунт   
                   <span className="pl-[6px]">
                     <UpRight />
                   </span>
                 </NavLink>
               </div>
 
-              <NavLink
-                to="/login"
-                className="hidden ml-[37px] md:flex items-end gap-[10px]  font-Poppins font-semiBold text-[15px] text-white"
-              >
-                {" "}
-                <span className="font-Poppins font-normal text-[13px] text-white">
-                  {" "}
-                  Уже есть аккаунт
-                </span>
-                Войти
-              </NavLink>
+              <div className="hidden md:flex items-end gap-[10px] ml-[37px]">
+                <p className=" font-Poppins font-normal text-[13px] text-white">
+                Забыли пароль
+                </p>
+                <p className="font-Poppins font-semiBold text-[15px] text-white">
+                Восстановить
+                </p>
+              </div>
             </div>
           </div>
         </form>
@@ -137,4 +96,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default SingIn;

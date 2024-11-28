@@ -18,7 +18,29 @@ export default {
         Roboto: ['"Roboto"', "sans-serif"],
         Stray: ['"Stray"', "sans-serif"],
       },
-      
+      colors: {
+        orange: "#804C2ECC",
+        lightOrange: "#9A6240",
+      },
+      backdropOpacity: {
+        15: ".15",
+      },
+      boxShadow: {
+        "3xl": "0px 0px 8px 2px rgba(0, 0, 0, 0.4)",
+        "4xl": "-20px 0px 40px -10px rgba(0, 0, 0, 0.15)",
+      },
+      backgroundImage: {
+        "nav-back": "url('/src/assets/images/navBack.webp')",
+        "portfolio-back": "url('/src/assets/images/mainCardImgTwo.webp')",
+        "billing-back": "url('/src/assets/images/billingBack.webp')",
+      },
+      scrollbar: {
+        hide: {
+          '&::-webkit-scrollbar': { display: 'none' },
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+        },
+      },
     },
   },
   plugins: [],
