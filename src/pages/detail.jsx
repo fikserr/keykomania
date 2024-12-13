@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-const DetailCard = React.lazy(() => import('../components/shared/DetailCard'));
+const DetailCard = React.lazy(() => import('../components/shared/detailCard.jsx'));
 
 function Detail() {
   const { id } = useParams();
