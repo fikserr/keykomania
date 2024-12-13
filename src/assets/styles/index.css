@@ -13,48 +13,56 @@
   src: url("../fonts/Poppins-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../fonts/Poppins-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../fonts/Poppins-Bold.ttf") format("truetype");
   font-weight: 700;
-  font-style: bold;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style:normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "FSP DEMO - Stray Bold";
@@ -81,4 +89,133 @@
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none; 
+}
+
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 32px 0 #fff, -32px 0 #fff;
+  position: relative;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: #FFF2;
+    box-shadow: 32px 0 #FFF2, -32px 0 #FFF;
+  }
+  50% {
+    background-color: #FFF;
+    box-shadow: 32px 0 #FFF2, -32px 0 #FFF2;
+  }
+  100% {
+    background-color: #FFF2;
+    box-shadow: 32px 0 #FFF, -32px 0 #FFF2;
+  }
+}
+.str-chat{
+  width: 349px;
+  padding: 24px 24px 0 24px;
+  background-color: #11131A;
+  overflow: scroll;
+  border-radius: 20px 20px 0 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  height: 400px;
+}
+.str-chat__channel{
+  display: flex;
+  border-radius: 0 0 20px 20px;
+  padding-bottom: 24px;
+  padding-top: 0;
+  overflow: hidden;
+  height: 70px;
+}
+.str-chat__empty-channel{
+  display: none;
+
+}
+.str-chat__message-input{
+  width: 100%;
+}
+.str-chat__message-input-inner{
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 0 16px;
+}
+.str-chat__channel-list-messenger__main{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column-reverse;
+  color: #FFF;
+  overflow: hidden;
+}
+.str-chat__main-panel{
+  width: 100%;
+}
+.str-chat__channel-list-messenger__main button{
+  display: flex;
+  align-items: start;
+  padding: 5px 0px;
+  gap: 8px;
+  width: 200px;
+
+}
+.str-chat__channel-preview-end{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  max-width: 200px;
+}
+.str-chat__avatar{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color:rgb(145, 52, 221);
+}
+.str-chat__channel-preview-messenger--last-message{
+  height: auto;
+  max-width: 250px;
+}
+.str-chat__channel-preview-messenger--last-message p{
+  max-width: 250px;
+  text-align: start;
+  height: auto;
+}
+.str-chat__container{
+  display: flex;
+  align-items: center;
+  background-color: #191B23;
+  height: 48px;
+  border-radius: 8px;
+  color: #FFF;
+  width: 100%;
+}
+.str-chat__channel-header{
+  display: none;
+}
+.str-chat__file-input-container{
+  display: none;
+  min-height: 40px;
+}
+.str-chat__file-input{
+  display: none;
+  min-height: 40px;
+}
+textarea{
+  display: flex;
+  align-items: center;
+  background: transparent;
+  min-height: 40px;
+  width: 230px ;
+  resize: none;
+  overflow: hidden;
+  outline: none;
 }

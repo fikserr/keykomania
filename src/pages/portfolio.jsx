@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react';
 import gridImgOne from "../assets/images/gridImgOne.webp";
 import gridImgTwo from "../assets/images/gridImgTwo.webp";
 import gridImgThree from "../assets/images/gridImgThree.webp";
@@ -6,12 +7,12 @@ import mainImgTwo from "../assets/images/mainCardImgTwo.webp";
 import breakfastOne from "../assets/images/breakfastOne.webp";
 import breakfastTwo from "../assets/images/breakfastTwo.webp";
 import breakfastThree from "../assets/images/breakfastThree.webp";
-import TopText from "../components/shared/topText";
+const TopText = React.lazy(()=> import("../components/shared/topText"))
 
 function Portfolio() {
   return (
     <div className="w-full">
-      <div className="relative w-screen h-[762px] md:h-[1160px] lg:h-[1269px] pt-[177px] md:pt-[226px] lg:pt-[200px]">
+      <div className="relative h-[762px] md:h-[1160px] lg:h-[1269px] pt-[177px] md:pt-[226px] lg:pt-[200px]">
         <div className="absolute inset-0 bg-nav-back bg-yellow-50 blur-[3px] brightness-80 bg-cover bg-center"></div>
         <div className="relative z-10 w-full">
           <div className="container">
@@ -55,7 +56,7 @@ function Portfolio() {
           </div>
         </div>
       </div>
-      <div className="relative w-screen h-[1074px] md:h-[1021px] lg:h-[1088px]">
+      <div className="relative  h-[1074px] md:h-[1021px] lg:h-[1088px]">
         <div className="absolute inset-0 bg-portfolio-back  blur-[3px] brightness-50 bg-cover  bg-center"></div>
         <div className="absolute inset-0 bg-orange"></div>
         <div className="relative z-10 w-full ">
@@ -84,7 +85,7 @@ function Portfolio() {
         </div>
       </div>
 
-      <div className="relative w-screen h-[762px] md:h-[1160px] lg:h-[1119px]">
+      <div className="relative h-[762px] md:h-[1160px] lg:h-[1119px]">
         <div className="absolute inset-0 bg-nav-back bg-yellow-50 blur-[3px] brightness-80 bg-cover"></div>
         <div className="relative  z-10 w-full flex justify-center pt-[37px] md:pt-[50px] lg:pt-[134px] overflow-scroll scrollbar-hide">
           <div className="cards flex gap-[10px] md:gap-[13px] lg:gap-4 ">

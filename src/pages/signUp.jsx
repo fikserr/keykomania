@@ -1,13 +1,16 @@
-import CardInsta from "../components/shared/cardInsta";
+import React from 'react';
 import cake from "../assets/images/cake.webp";
 import bon from "../assets/images/bon.webp";
 import nutmeg from "../assets/images/nutmeg.webp";
-import Register from "../components/shared/register";
-import Social from "../components/ui/social";
-import Sertificate from "../icons/sertificate";
-import Logo from "../components/ui/logo";
 import { NavLink } from "react-router-dom";
+import Resouce from "../resource_img_16194826707835.jpg"
 
+
+const Register = React.lazy(()=> import("../components/shared/register"))
+const Social = React.lazy(()=> import("../components/ui/social"))
+const Sertificate = React.lazy(()=> import("../icons/sertificate"))
+const Logo = React.lazy(()=> import("../components/ui/logo"))
+const CardInsta = React.lazy(()=> import("../components/shared/cardInsta"))
 
 const cardInstagram = [
   {
@@ -32,27 +35,30 @@ const cardInstagram = [
 
 function SignUp() {
   return (
-    <div className="w-full h-[100vh]  overflow-hidden relative bg-[url('../../assets/images/signUp.webp')] bg-cover bg-top ">
-      <div className="hidden flex-col gap-3 absolute bottom-[-350px] ml-[-107px] lg:ml-[57px] xl:ml-[107px]  md:flex">
+    <div className="w-full h-[100vh]  overflow-hidden relative  bg-cover bg-top ">
+            <img src={Resouce} alt="" className="blur-md object-cover object-center w-full absolute "/>
+      <div className="hidden flex-col gap-3 absolute z-0 bottom-[-350px] ml-[-107px] lg:ml-[57px] xl:ml-[107px]  md:flex">
         {cardInstagram.map((item, index) => (
           <div key={index}>
             <CardInsta data={item} />
           </div>
         ))}
       </div>
-      <div className="container flex flex-col md:items-end  mt-[46px]">
+      <div className="container relative  flex flex-col md:items-end z-30 mt-[46px]">
           <NavLink to='/login' className="hidden items-center justify-center w-[98px] h-[40px] rounded-lg  border-[1px] border-white font-Poppins font-normal text-sm text-[#fff] leading-[21px] md:flex">
             Войти
           </NavLink>
  
 
-        <div className="flex flex-col pt-[46px]">
+        <div className="flex flex-col pt-[46px] z-50">
                 
               <Logo className="font-Stray font-bold text-white text-[60px] leading-[72px]" icon="fill-white size-2 md:size-5"/>
 
-              <div className="flex flex-col items-center xl:flex-row w-full pt-[21px] md:pt-[31px] lg:pt-[37px]">
+              <div className="flex flex-col lg:px-40  items-center xl:flex-row w-full pt-[21px] md:pt-[31px] lg:pt-[37px]">
               <Register />
-              <Social/>
+              <div className="xl:absolute lg:right-10 lg:pr-20 ">
+                <Social />
+              </div>
             
               </div>
 

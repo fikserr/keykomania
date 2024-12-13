@@ -1,7 +1,10 @@
+import React from "react";
 import imageTop from "../../assets/images/keykomania5x5.webp";
-import CheckBlue from "../../icons/checkBlue";
 import instagram from "../../assets/images/instagram.webp"
-import Video from "../../icons/video";
+
+const CheckBlue = React.lazy(()=> import("../../icons/checkBlue"))
+
+const Video = React.lazy(()=> import("../../icons/video"))
 
 function CardInsta({data}) {
   return (

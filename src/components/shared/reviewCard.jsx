@@ -1,8 +1,9 @@
 import bon from "../../assets/images/bon.webp";
 import musa from "../../assets/images/musa.webp";
 import instagram from "../../assets/images/instagram.webp";
-import Video from "../../icons/video";
-import Stars from "../../icons/stars";
+import React from "react";
+const Video = React.lazy(()=> import("../../icons/video"))
+const Stars = React.lazy(()=> import("../../icons/stars"))
 
 function ReviewCard({img,video,stars}) {
   return (

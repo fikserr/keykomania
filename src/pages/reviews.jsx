@@ -1,11 +1,21 @@
-import ReviewCard from "../components/shared/reviewCard";
-import TopText from "../components/shared/topText";
-import Comma from "../icons/comma";
 import { Swiper, SwiperSlide } from "swiper/react";
+import React, { Suspense, useEffect } from 'react';
 import "swiper/css";
 import "swiper/css/pagination";
+import { useDispatch, useSelector } from "react-redux";
+import { getDataDynamic, ZaroProduct } from "../store/getDataDynamic";
+import { REVIEWS_COLLECTION_ID } from "../config/appwriteConfig";
+const ReviewCard = React.lazy(()=> import("../components/shared/reviewCard"))
+const TopText = React.lazy(()=> import("../components/shared/topText"))
+const Comma = React.lazy(()=> import("../icons/comma"))
 
 function Reviews() {
+  const dispatch = useDispatch()
+  const {documents} = useSelector((state)=>state.getDynamic)
+  useEffect(()=>{
+    dispatch(ZaroProduct())
+    dispatch(getDataDynamic(REVIEWS_COLLECTION_ID)) 
+  },[])
   return (
     <div>
       <div className="relative w-full min-h-[762px] md:min-h-[1269px] lg:min-h-[1269px] pt-[177px] md:pt-[270px] lg:pt-[250px]">
