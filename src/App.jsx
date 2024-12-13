@@ -24,7 +24,7 @@ const HomeLayout = React.lazy(() => import("./layout/homeLayout"));
 const Courses = React.lazy(() => import("./pages/courses"));
 const Reviews = React.lazy(() => import("./pages/reviews"));
 const Login = React.lazy(() => import("./pages/login"));
-const Detail = React.lazy(() => import("./pages/deatil")); // Xato nom to'g'irlandi
+const Detail = React.lazy(() => import("./pages/detail")); 
 const Billing = React.lazy(() => import("./pages/billing"));
 const Stream = React.lazy(() => import("./pages/stream"));
 const AdminStream = React.lazy(() => import("./pages/adminStream"));
