@@ -35,7 +35,7 @@ const cardInstagram = [
 
 function SignUp() {
   return (
-    <div className="w-full h-[100vh]  overflow-hidden relative  bg-cover bg-top ">
+    <div className="w-full h-[100vh]  overflow-hidden relative  bg-cover bg-top min-h-[1000px]">
             <img src={Resouce} alt="" className="blur-md object-cover object-center w-full absolute "/>
       <div className="hidden flex-col gap-3 absolute z-0 bottom-[-350px] ml-[-107px] lg:ml-[57px] xl:ml-[107px]  md:flex">
         {cardInstagram.map((item, index) => (

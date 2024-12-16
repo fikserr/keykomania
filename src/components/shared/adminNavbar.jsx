@@ -1,37 +1,45 @@
-import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { clearName } from "../../store/userSlice";
 
 const AdminNavbar = () => {
+  const dispatch = useDispatch();
+
+  function handleLogOut() {
+    dispatch(clearName());
+    window.location.reload();
+  }
   const navStyle = {
-    padding: '15px 20px 15px 100px',
-    background: '#7E5943',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    color: 'white',
+    padding: "15px 20px 15px 100px",
+    background: "#7E5943",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    color: "white",
   };
 
   const logoStyle = {
-    fontWeight: 'bold',
-    fontSize: '37px',
+    fontWeight: "bold",
+    fontSize: "37px",
   };
 
   const linkContainerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
+    display: "flex",
+    justifyContent: "center",
     flex: 1,
-    gap: '8%',
+    gap: "8%",
   };
 
   const linkStyle = {
-    textDecoration: 'none',
-    color: 'white',
-    fontWeight: '500',
-    fontSize: '20px',
-    transition: 'color 0.3s ease',
+    textDecoration: "none",
+    color: "white",
+    fontWeight: "500",
+    fontSize: "20px",
+    transition: "color 0.3s ease",
   };
 
   const linkHoverStyle = {
-    color: '#D1C4A8',
+    color: "#D1C4A8",
   };
 
   return (
@@ -89,6 +97,9 @@ const AdminNavbar = () => {
         >
           Отзыв
         </Link>
+        <button onClick={() => handleLogOut()} style={linkStyle}>
+          Выйти
+        </button>
       </div>
     </nav>
   );

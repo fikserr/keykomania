@@ -2,7 +2,7 @@ import cake from "../assets/images/cake.webp";
 import bon from "../assets/images/bon.webp";
 import nutmeg from "../assets/images/nutmeg.webp";
 import { NavLink } from "react-router-dom";
-import React, { Suspense, useEffect } from 'react';
+import React, { useEffect } from 'react';
 const Logo = React.lazy(()=>import( "../components/ui/logo"))
 const SingIn = React.lazy(()=>import( "../components/shared/singIn"))
 const Social = React.lazy(()=>import( "../components/ui/social"))
@@ -37,7 +37,7 @@ function Login() {
     
   },[name.pass])
   return (
-    <div className="w-full h-[100vh]  overflow-hidden relative bg-[url('../../assets/images/signUp.webp')] bg-cover bg-top ">
+    <div className="w-full h-[100vh] overflow-hidden  relative bg-[url('../../assets/images/signUp.webp')] bg-cover bg-top min-h-[874px]">
       <div className="hidden flex-col gap-3 absolute bottom-[-350px] ml-[-107px] lg:ml-[57px] xl:ml-[107px]  md:flex">
         {cardInstagram.map((item, index) => (
           <div key={index}>
@@ -50,7 +50,7 @@ function Login() {
           Регистрация
         </NavLink>
 
-        <div className="flex flex-col pt-[46px]">
+        <div className="flex flex-col  pt-[46px]">
           <div className="relative z-50">
           <Logo
             className="font-Stray font-bold text-white text-[60px] leading-[72px]"
@@ -58,7 +58,7 @@ function Login() {
           />
 
           </div>
-          <div className="flex flex-col lg:px-40 items-center xl:flex-row w-full pt-[21px] md:pt-[31px] lg:pt-[37px]">
+          <div className="flex flex-col lg:px-40 items-center xl:flex-row w-full  pt-[21px] md:pt-[31px] lg:pt-[37px]">
             <SingIn />
               <div className="xl:absolute lg:right-10 lg:pr-20 ">
                 <Social />
