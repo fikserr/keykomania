@@ -135,7 +135,7 @@ function Register() {
               <button
                 type="submit"
                 disabled={loading}
-                className="h-[40px] w-[230px] md:w-[290px] rounded-[5px] text-white bg-gradient-to-r from-[#1AA8DD] to-[#1A6FDD] disabled:opacity-50"
+                className="font-Poppins font-normal text-xs text-[#060606] bg-white flex items-center justify-center w-full h-[43px] md:w-[156px] md:h-[32px] rounded-[5px]0"
               >
                 {loading ? "Загрузка..." : "Зарегистрироваться"}
               </button>
