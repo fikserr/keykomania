@@ -4,6 +4,7 @@ import { REVIEWS_COLLECTION_ID } from "../config/appwriteConfig";
 import { useNavigate } from "react-router-dom";
 import { Client, Storage } from "appwrite";
 import { APPWRITE_PROJECT, APPWRITE_ENDPOINT } from "../config/appwriteConfig";
+import Loading from "../components/shared/loading";
 
 const client = new Client()
   .setEndpoint(APPWRITE_ENDPOINT)
@@ -48,7 +49,7 @@ const AdminReviews = () => {
     }
   };
 
-  if (loading) return <p>Loading reviews...</p>;
+  if (loading) return <Loading/>;
   if (error) return <p>{error}</p>;
 
   return (

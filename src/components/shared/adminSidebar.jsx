@@ -8,25 +8,25 @@ const AdminSidebar = () => {
       icon: "🔴",
       title: "Начать трансляцию",
       subtitle: "Включить стрим на сайте",
-      path: "/adminStream",
+      path: "admin-stream",
     },
     {
       icon: "➕",
       title: "Услугу",
       subtitle: "Добавить услугу в список",
-      path: "adminServices",
+      path: "admin-services",
     },
     {
       icon: "➕",
       title: "Курс",
       subtitle: "Добавить курс в список",
-      path: "/courses",
+      path: "admin-courses",
     },
     {
       icon: "➕",
       title: "Отзыв",
       subtitle: "Добавить отзыв",
-      path: "/reviews",
+      path: "admin-reviews",
     },
   ];
 

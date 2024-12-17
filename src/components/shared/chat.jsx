@@ -51,7 +51,7 @@ const Root = () => {
           name: "kleesli",
           image: "https://link.to/avatar.png", // User image
         };
-        console.log(tokenApiUser, newUser);
+
         // Upsert user (create or update)
 
         // await chatClient.upsertUsers([newUser]);

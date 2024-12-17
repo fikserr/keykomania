@@ -14,7 +14,7 @@ function Courses() {
   useEffect(()=>{
     dispatch(ZaroProduct())
     dispatch(getDataDynamic(COLLECTION_ID))
-    console.log(documents);
+
   },[])
   return (
     <div>
@@ -33,14 +33,6 @@ function Courses() {
                 </div>
               ))}
             </div>
-
-            <BottomText
-              className={
-                "flex flex-col items-center pt-[110px] md:pt-[185px] lg:pt-[98px] pb-[62px] md:pb-98px lg:pb-[59px]"
-              }
-              title="XIZMATLAR"
-              text="Xizmatlar toʻplami: Buyurtmachi uchun zarur xizmatlar bitta toʻplamga yigʻiladi."
-            />
           </div>
         </div>
       </div>

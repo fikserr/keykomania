@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { Client, Databases } from "appwrite";
-import { APPWRITE_ENDPOINT, APPWRITE_PROJECT, COLLECTION_ID_USERS, DATABASE_ID } from "../config/appwriteConfig";
+import { APPWRITE_ENDPOINT, APPWRITE_PROJECT, DATABASE_ID } from "../config/appwriteConfig";
 
 const client = new Client();
 const databases = new Databases(client);
@@ -24,7 +24,7 @@ export const getDataDynamic = createAsyncThunk(
   }
 );
 
-// Slice yaratish
+
 const getDataUser = createSlice({
   name: "getDynamic",
   initialState: {

@@ -5,12 +5,12 @@ import { APPWRITE_ENDPOINT, APPWRITE_PROJECT, DATABASE_ID, STREAM_TOKEN_CALLID }
 // Appwrite'ни таништириш
 const client = new Client();
 client
-    .setEndpoint(APPWRITE_ENDPOINT) // Appwrite сервер манзили
-    .setProject(APPWRITE_PROJECT);  // Лойиҳа ID
+    .setEndpoint(APPWRITE_ENDPOINT)
+    .setProject(APPWRITE_PROJECT); 
 
 const databases = new Databases(client);
 
-// АсинхронThunk: Битта ҳужжатни ID бўйича ўчириш
+
 export const deleteDocumentById = createAsyncThunk(
     'documents/deleteDocumentById',
     async (documentId, thunkAPI) => {
@@ -20,20 +20,20 @@ export const deleteDocumentById = createAsyncThunk(
             // Ҳужжатни ўчириш
             await databases.deleteDocument(DATABASE_ID, STREAM_TOKEN_CALLID, documentId);
 
-            return documentId; // Муваффақиятли ўчирилган ҳужжат ID қайтарилади
+            return documentId; 
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }
     }
 );
 
-// Redux Toolkit слайси
+
 const documentSliceId = createSlice({
     name: 'documents',
     initialState: {
-        items: [],       // Ҳужжатлар рўйхати
-        loading: false,  // Юкланиш ҳолати
-        error: null,     // Хатолар
+        items: [],      
+        loading: false,  
+        error: null,     
     },
     reducers: {},
     extraReducers: (builder) => {
@@ -44,7 +44,6 @@ const documentSliceId = createSlice({
             })
             .addCase(deleteDocumentById.fulfilled, (state, action) => {
                 state.loading = false;
-                // Ўчирилган ҳужжат ID бўйича уни рўйхатдан олиб ташлаш
                 state.items = state.items.filter(doc => doc.$id !== action.payload);
             })
             .addCase(deleteDocumentById.rejected, (state, action) => {

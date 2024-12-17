@@ -28,11 +28,11 @@ export const createUser = createAsyncThunk(
       PhoneNumber: userData.PhoneNumber,
       Password: userData.Password,
     };
-    console.log(tokenApiUser,userData.Password);
+
     
     try {
       // StreamChat foydalanuvchisini sozlash
-      console.log(userData.FirstName);
+
       
       const newUser = {
         id: userData.Password,

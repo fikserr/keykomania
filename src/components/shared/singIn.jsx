@@ -14,8 +14,8 @@ function SingIn() {
     getValues,
     formState: { errors },
   } = useForm();
-  const documents  = useSelector((state) => state.userLogin.documents);
-  const name = useSelector((state)=>state.userData.name)
+  const documents = useSelector((state) => state.userLogin.documents);
+  const name = useSelector((state) => state.userData.name);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -24,23 +24,27 @@ function SingIn() {
     dispatch(getUsersLogin());
     const data = getValues();
     const currentDate = new Date().toLocaleString(); // Yangi sanani olish
-    dispatch(clearName())
-    dispatch(setName({PhoneNumber:data.PhoneNumber, date:currentDate, pass:data.Password}))
-    documents.map((item)=>{
-      console.log(item.PhoneNumber.trim(""));
-      
-      if (item.PhoneNumber.trim("") == data.PhoneNumber && item.Password === data.Password) {
-        navigate('/')
-        console.log(item);
-        
+    dispatch(clearName());
+    dispatch(
+      setName({
+        PhoneNumber: data.PhoneNumber,
+        date: currentDate,
+        pass: data.Password,
+      })
+    );
+    documents.map((item) => {
+      if (
+        item.PhoneNumber.trim("") == data.PhoneNumber &&
+        item.Password === data.Password
+      ) {
+        navigate("/");
+
       }
-    })
-    
+    });
   }
 
   return (
     <div className="h-[469px] w-full md:h-[379px] md:w-[613px] rounded-[25px] relative overflow-hidden z-0">
-
       <div className="absolute top-0 h-full w-full blur-sm bg-[url('../../assets/images/signUp.webp')] brightness-50 bg-cover bg-center"></div>
       <div className="absolute h-full w-full top-0 z-10 pt-[27px] pb-[45px] px-[47px]">
         <h5 className="font-Poppins font-medium text-[25px] text-white leading-9">

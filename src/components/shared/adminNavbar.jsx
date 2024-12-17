@@ -58,7 +58,7 @@ const AdminNavbar = () => {
           Главная
         </Link>
         <Link
-          to="/adminStream"
+          to="admin-stream"
           style={linkStyle}
           onMouseEnter={(e) => (e.target.style.color = linkHoverStyle.color)}
           onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
@@ -66,7 +66,7 @@ const AdminNavbar = () => {
           Трансляция
         </Link>
         <Link
-          to="/users"
+          to="admin-users"
           style={linkStyle}
           onMouseEnter={(e) => (e.target.style.color = linkHoverStyle.color)}
           onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
@@ -74,7 +74,7 @@ const AdminNavbar = () => {
           Пользователи
         </Link>
         <Link
-          to="adminServices"
+          to="admin-services"
           style={linkStyle}
           onMouseEnter={(e) => (e.target.style.color = linkHoverStyle.color)}
           onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
@@ -82,7 +82,7 @@ const AdminNavbar = () => {
           Услуги
         </Link>
         <Link
-          to="/courses"
+          to="admin-courses"
           style={linkStyle}
           onMouseEnter={(e) => (e.target.style.color = linkHoverStyle.color)}
           onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}
@@ -90,7 +90,7 @@ const AdminNavbar = () => {
           Курсы
         </Link>
         <Link
-          to="/reviews"
+          to="admin-reviews"
           style={linkStyle}
           onMouseEnter={(e) => (e.target.style.color = linkHoverStyle.color)}
           onMouseLeave={(e) => (e.target.style.color = linkStyle.color)}

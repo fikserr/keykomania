@@ -4,6 +4,7 @@ import { COLLECTION_ID } from "../config/appwriteConfig";
 import { useNavigate } from "react-router-dom";
 import { Client, Storage } from "appwrite";
 import { APPWRITE_PROJECT, APPWRITE_ENDPOINT } from "../config/appwriteConfig";
+import Loading from "../components/shared/loading";
 
 // Initialize Appwrite Client and Storage
 const client = new Client()
@@ -50,7 +51,7 @@ const AdminCourses = () => {
     }
   };
 
-  if (loading) return <p>Loading courses...</p>;
+  if (loading) return <Loading/>;
   if (error) return <p>{error}</p>;
 
   return (

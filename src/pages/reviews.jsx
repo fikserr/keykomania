@@ -62,7 +62,7 @@ function Reviews() {
                 pagination={{
                   clickable: true,
                 }}
-                className="mySwiper pt-[23px] md:pt-[53px] lg:pt-[45px] mb-[61px] md:mb-[99px] lg:mb-[135px] w-full"
+                className="mySwiper pt-[23px] md:mt-[53px] lg:mt-[45px] mb-[131px] md:mb-[201px] lg:mb-[180px] w-full"
               >
                 <SwiperSlide className="flex justify-center">
                   <ReviewCard

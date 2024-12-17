@@ -3,6 +3,7 @@ import { fetchEntries, deleteEntry } from "../utils/api";
 import { useNavigate } from "react-router-dom";
 import { Client, Storage } from "appwrite";
 import { APPWRITE_PROJECT, APPWRITE_ENDPOINT,COLLECTION_ID_SERVICES  } from "../config/appwriteConfig";
+import Loading from "../components/shared/loading";
 
 const client = new Client()
   .setEndpoint(APPWRITE_ENDPOINT)
@@ -45,7 +46,7 @@ const AdminServices = () => {
     }
   };
 
-  if (loading) return <p>Loading services...</p>;
+  if (loading) return <Loading/>;
   if (error) return <p>{error}</p>;
 
   return (

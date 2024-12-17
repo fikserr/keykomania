@@ -13,16 +13,16 @@ import documentSliceId from './deleteAppwriteToken';
 import getDataUser from './getDataDynamic';
 import productSlice from './addBasket';
 
-import { combineReducers } from 'redux'; // Import combineReducers
+import { combineReducers } from 'redux'; 
 
-// redux-persist konfiguratsiyasi
+
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
 };
 
-// Reducerlarni birlashtirish
+
 const rootReducer = combineReducers({
   token: dataReducer,
   call: callReducer,
@@ -37,10 +37,10 @@ const rootReducer = combineReducers({
   product: productSlice,
 });
 
-// Persist qilish uchun reducer
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// Redux store yaratish
+
 const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>

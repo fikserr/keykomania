@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchEntries } from "../utils/api";
 import { COLLECTION_ID_USERS } from "../config/appwriteConfig";
+import Loading from "../components/shared/loading";
 
 const AdminUsers = () => {
   const [users, setUsers] = useState([]);
@@ -34,7 +35,7 @@ const AdminUsers = () => {
     setExpandedUserId((prevId) => (prevId === userId ? null : userId));
   };
 
-  if (loading) return <p>Loading users...</p>;
+  if (loading) return <Loading/>;
   if (error) return <p>{error}</p>;
 
   return (

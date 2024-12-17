@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-// Async thunk for fetching user data
 export const getDataUser = createAsyncThunk('data/getData', async (path) => {
   try {
     const response = await fetch("https://keykomania-server.onrender.com/user", {
@@ -13,16 +12,15 @@ export const getDataUser = createAsyncThunk('data/getData', async (path) => {
       }),
     });
 
-    // If the request was successful, return the data (token)
     if (response.ok) {
       const data = await response.json();
-      return data.token;  // Make sure to return the token
+      return data.token;  
     } else {
       throw new Error("Failed to fetch token");
     }
   } catch (error) {
     console.error("Xatolik:", error);
-    throw error;  // This will be caught in the rejected case
+    throw error; 
   }
 });
 
@@ -38,11 +36,11 @@ const getUserToken = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getDataUser.fulfilled, (state, action) => {
-        // On success, store the token in the state
+
         state.tokenApiUser = action.payload;
       })
       .addCase(getDataUser.rejected, (state, action) => {
-        // On failure, store the error message
+
         state.errorUser = action.error.message;
       });
   },

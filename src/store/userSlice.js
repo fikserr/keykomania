@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// Initial state
+
 const initialState = {
-  name: localStorage.getItem('nameData') ? JSON.parse(localStorage.getItem('nameData')) : '', // localStorage'dan olingan qiymat
+  name: localStorage.getItem('nameData') ? JSON.parse(localStorage.getItem('nameData')) : '', 
   error: null
 };
 
@@ -12,24 +12,24 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setName: (state, action) => {
-      // Agar PhoneNumber bo'sh bo'lsa, errorni true qilamiz
+
       if (action.payload.PhoneNumber.trim() === "") {
         state.error = true;
       } else {
         state.error = false;
         state.name = action.payload; // name'ni yangilaymiz
-        localStorage.setItem('nameData', JSON.stringify(action.payload)); // localStorage'ga saqlash
+        localStorage.setItem('nameData', JSON.stringify(action.payload));
       }
     },
     clearName: (state) => {
       state.name = '';
-      localStorage.removeItem('nameData'); // localStorage'dan o'chirish
+      localStorage.removeItem('nameData'); 
     },
   },
 });
 
-// Actions
+
 export const { setName, clearName } = userSlice.actions;
 
-// Reducer
+
 export default userSlice.reducer;

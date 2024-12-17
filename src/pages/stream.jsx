@@ -39,7 +39,7 @@ const stream_callID = streamKeys[0]?.[0]?.stream_call_id || 'No call ID availabl
   useEffect(() => {
     dispatch(getData("https://keykomania-server.onrender.com/api"));
     dispatch(getTokenCallID());
-    console.log(stream_callID, stream_token);
+
   }, [dispatch]);
 
   useEffect(() => {
@@ -49,7 +49,6 @@ const stream_callID = streamKeys[0]?.[0]?.stream_call_id || 'No call ID availabl
         user,
         token: stream_token,
       });
-      console.log(stream_callID, stream_token);
       const existingCall = clientRef.current.call("livestream", stream_callID);
       existingCall.camera.disable();
       existingCall.microphone.disable();
@@ -65,7 +64,7 @@ const stream_callID = streamKeys[0]?.[0]?.stream_call_id || 'No call ID availabl
         <div className="relative z-10 w-full pt-[29px] md:pt-[34px] lg:pt-9">
           <NavLink to="/">
             <Logo
-              className="font-Stray font-bold text-white text-[60px] leading-[72px]"
+              className="font-Stray font-bold text-white text-[60px] leading-[72px] cursor-pointer"
               icon="fill-white size-2 md:size-5"
             />
           </NavLink>
