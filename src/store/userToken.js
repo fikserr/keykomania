@@ -1,26 +1,30 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getDataUser = createAsyncThunk('data/getData', async (path) => {
-  try {
-    const response = await fetch("https://keykomania-server.onrender.com/user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: path,
-      }),
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      return data.token;  
-    } else {
-      throw new Error("Failed to fetch token");
+  console.log(path);
+  
+  if (path.trim() !== "") {
+    try {
+      const response = await fetch("https://keykomania-server.onrender.com/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: path,
+        }),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        return data.token;  
+      } else {
+        throw new Error("Failed to fetch token");
+      }
+    } catch (error) {
+      console.error("Xatolik:", error);
+      throw error; 
     }
-  } catch (error) {
-    console.error("Xatolik:", error);
-    throw error; 
   }
 });
 

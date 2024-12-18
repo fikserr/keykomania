@@ -34,7 +34,7 @@ export default function AdminStream() {
   const userId = "fikserr";
   const user = {
     id: userId,
-    name: "Abdulloh",
+    name: "Ziyodakhon",
   };
 
   const clientRef = useRef(null);

@@ -35,7 +35,7 @@ export const createUser = createAsyncThunk(
       console.log(userData.FirstName);
       
       const newUser = {
-        id: userData.Password,
+        id: userData.PhoneNumber,
         name: userData.FirstName,
         image: "https://link.to/avatar.png", 
       };

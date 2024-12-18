@@ -35,7 +35,7 @@ const AdminChat = () => {
   const client = useCreateChatClient({
     apiKey,
     tokenOrProvider: tokenApiUser,
-    userData: { id: userId, name: "Admin Fikserr" },
+    userData: { id: userId, name: "Admin Ziyodakhon " },
   });
 
   useEffect(() => {

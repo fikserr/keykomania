@@ -43,8 +43,8 @@ function Navbar({ className }) {
       <div className={`container flex flex-col justify-center  z-10 pt-[18px] md:pt-[67px] lg:pt-10 ${
         scroll ? " py-0 my-0" : ""
       }`}>
-        <div className={`fixed left-16 right-16 py-[15px] mt-20 md:mt-[46px] mb-[33px] md:mb-0 md:pt-0 md:pb-[13px] lg:pb-[19px] flex justify-end gap-[9px] md:gap-0 md:justify-between border-t-[2px] md:border-t-0 md:border-b-[3px] border-black duration-700 ${
-        scroll ? "top-0 mt-[0px] pt-1  md:mt-[0] md:pt-2" : ""
+        <div className={`fixed left-16 right-16  flex justify-end gap-[9px] md:gap-0 md:pt-0 md:pb-[13px] lg:pb-[19px] md:justify-between border-t-[2px] md:border-t-0 md:border-b-[3px] border-black duration-700 ${
+        scroll ? "top-0 mt-0 pt-1  md:mt-0 md:pt-2" : "py-[15px] mt-20 md:mt-10 mb-[33px] md:mb-0"
       }`}>
           
           <NavLink

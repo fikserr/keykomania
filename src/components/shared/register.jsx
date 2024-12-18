@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { createUser } from "../../store/createUser";
 import Eye from "../../icons/eye";
 import { getDataUser } from "../../store/userToken";
@@ -12,8 +12,6 @@ function Register() {
   const [isChecked, setIsChecked] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loading, error } = useSelector((state) => state.user);
-  const {tokenApiUser} = useSelector((state)=>state.tokenUser)
 
   const {
     register,
@@ -21,16 +19,30 @@ function Register() {
     formState: { errors },
   } = useForm();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const data = getValues();
-    dispatch(getDataUser(data.Password))
-    if (isChecked) {
 
-      
-      dispatch(createUser({ userData: data,tokenApiUser })).then((res) => {
+    // Tokenni olishni kutamiz
+    let tokenApiUser;
+    try {
+      tokenApiUser = await dispatch(getDataUser(data.PhoneNumber)).unwrap(); // unwrap tokenni to‘g‘ri qaytaradi
+      console.log("Yangilangan token:", tokenApiUser);
+    } catch (error) {
+      console.error("Tokenni olishda xatolik:", error);
+      alert("Tokenni olishda xatolik yuz berdi. Qaytadan urinib ko'ring.");
+      return;
+    }
+
+    if (isChecked) {
+      console.log(tokenApiUser, "token");
+
+      // Foydalanuvchini yaratish
+      dispatch(createUser({ userData: data, tokenApiUser })).then((res) => {
         if (!res.error) {
           navigate("/login");
+        } else {
+          console.error("Foydalanuvchi yaratishda xatolik:", res.error);
         }
       });
     } else {
@@ -131,15 +143,14 @@ function Register() {
                 Условиями использования и Политикой конфиденциальности.
               </p>
             </div>
-            <div className="flex flex-col md:flex-row items-center w-full">
+            <div className="flex flex-col md:flex-row items-center w-full gap-2">
               <button
                 type="submit"
-                disabled={loading}
-                className="font-Poppins font-normal text-xs text-[#060606] bg-white flex items-center justify-center w-full h-[43px] md:w-[156px] md:h-[32px] rounded-[5px]0"
+                className="font-Poppins font-normal text-xs text-[#060606] bg-white flex items-center justify-center w-full h-[43px] md:w-[156px] md:h-[32px] rounded-[5px]"
               >
-                {loading ? "Загрузка..." : "Зарегистрироваться"}
+                Создать аккаунт
               </button>
-              {error && <p>{error.custom}</p>}
+
               <p className="pt-2 md:pt-0 text-white text-[8px] md:text-[13px]">
                 У вас уже есть аккаунт?{" "}
                 <NavLink to="/login" className="underline">

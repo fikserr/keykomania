@@ -15,7 +15,6 @@ function SingIn() {
     formState: { errors },
   } = useForm();
   const documents = useSelector((state) => state.userLogin.documents);
-  const name = useSelector((state) => state.userData.name);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -23,12 +22,17 @@ function SingIn() {
     e.preventDefault();
     dispatch(getUsersLogin());
     const data = getValues();
-    const currentDate = new Date().toLocaleString(); // Yangi sanani olish
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const day = String(currentDate.getDate()).padStart(2, "0");
     dispatch(clearName());
     dispatch(
       setName({
         PhoneNumber: data.PhoneNumber,
-        date: currentDate,
+        day: day,
+        year: year,
+        month: month,
         pass: data.Password,
       })
     );
@@ -38,7 +42,6 @@ function SingIn() {
         item.Password === data.Password
       ) {
         navigate("/");
-
       }
     });
   }

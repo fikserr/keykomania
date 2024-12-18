@@ -29,9 +29,9 @@ export default function Stream() {
     name: "fikserr",
   };
   const { dataApp } = useSelector((state) => state.getAppWriteToken);
-  const streamKeys = dataApp.reverse()
+  const streamKeys = dataApp?.reverse()
   const stream_token = streamKeys[0]?.[0]?.stream_token || 'No token available';
-const stream_callID = streamKeys[0]?.[0]?.stream_call_id || 'No call ID available';
+  const stream_callID = streamKeys[0]?.[0]?.stream_call_id || 'No call ID available';
   
   const clientRef = useRef(null);
   const [call, setCall] = useState(null);
